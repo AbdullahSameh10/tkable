@@ -1,8 +1,8 @@
 <h1 align="center">
-  <img src="Tkable Logo.png" width="300">
+  <img src="Tkable Logo.png" width="500">
 </h1>
 
-<p align="center">The simplest way to create tables in Tkinter for beginners :).</p>
+<p align="center">The simplest way to create tables in Tkinter for beginners :)</p>
 
 ## Installation
 ```bash
@@ -21,6 +21,59 @@ You can customize the table using the following parameters:
 | `row_height`        | int        | `28`                    | Height of each row      |
 | `font`              | tuple      | `("Segoe UI", 10)`      | Font used in the table  |
 | `alternating_colors`| tuple      | `("#ffffff", "#f5f5f5")`| Row background colors   |
+
+---
+
+## 📦 API Reference
+
+### 1 ) `insert_row(*values)`
+Add a new row to the table.
+
+**Example:**
+```python
+table.insert_row("Person Name", 20, "City")
+```
+### 2 ) `insert_dict(data: dict)`
+Insert a row using a dictionary (keys must match column names).
+
+**Example:**
+```python
+table.insert_dict({
+    "Name": "Person Name",
+    "Age": 22,
+    "City": "City"
+})
+```
+### 3 ) `load_data(data)`
+Load multiple rows at once.
+
+**Example:**
+```python
+table.load_data([
+    ["Person 1", 20, "City 1"],
+    ["person 2", 22, "City 2"]
+])
+```
+### 4 ) `clear()`
+Remove all rows from the table.
+
+**Example:**
+```python
+table.clear()
+```
+### 5 ) `get_selected_row()`
+Return the selected row as a dictionary.
+Returns None if nothing is selected.
+
+**Example:**
+```python
+selectedRow = table.get_selected_row()
+```
+
+
+> 💡 Tip: Use `insert_dict()` when working with forms for cleaner code.
+
+---
 
 ## Features:
 ```markdown
@@ -98,3 +151,4 @@ table.load_data([
 
 root.mainloop()
 ```
+![Result Screenshot]()
