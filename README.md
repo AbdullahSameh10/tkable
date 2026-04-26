@@ -1,11 +1,7 @@
 <h1 align="center">
-  Tkable
+  <img src="Tkable Logo.png" width="300">
 </h1>
-<p align="center">
-  <img src="https://img.shields.io/badge/status-active-success" />
-  <img src="https://img.shields.io/badge/license-MIT-blue" />
-  <img src="https://img.shields.io/badge/version-1.0.0-purple" />
-</p>
+
 <p align="center">The simplest way to create tables in Tkinter for beginners :).</p>
 
 ## Installation
