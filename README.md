@@ -14,13 +14,24 @@
 
 ---
 
-## ✨ Features
+## ✨ Why Tkable?
+* No complex setup
+* No Treeview headaches
+* Built for beginners
+* Clean API
+* Works out of the box
 
-* Easy to use
-* Insert rows or dictionaries
-* Column sorting
-* Alternating row colors
-* Scrollable table
+---
+
+## 🧠 When should you use Tkable?
+
+✔ Learning Tkinter
+
+✔ Building simple apps
+
+✔ Creating dashboards
+
+✔ Managing data visually
 
 ---
 
@@ -40,7 +51,7 @@ import tkinter as tk
 
 root = tk.Tk()
 
-table = DataTable(root, ["Name", "Age", "City"])
+table = DataTable(root, ["Name", "Age", "City"], header_bg="#ff004c" , alternating_colors=("#ffffff", "#ffcadc"))
 
 table.load_data([
     ["Person 1", 20, "City 1"],
@@ -52,74 +63,7 @@ root.mainloop()
 
 ---
 
-## 🧪 Full Example
-
-```python
-from tkable import DataTable
-
-root = tk.Tk()
-root.title("Tkinter DataTable Demo")
-root.geometry("600x400")
-
-# Initialize The Table:
-table = DataTable(
-    root,
-    ["Name", "Age", "City"],
-    header_bg="#ff004c",
-    alternating_colors=("#ffffff", "#ffcadc")
-)
-
-# --- Form --- 
-form = tk.Frame(root)
-form.pack(pady=10)
-
-name_var = tk.StringVar()
-age_var = tk.StringVar()
-city_var = tk.StringVar()
-
-tk.Label(form, text="Name").grid(row=0, column=0)
-tk.Entry(form, textvariable=name_var).grid(row=0, column=1)
-
-tk.Label(form, text="Age").grid(row=0, column=2)
-tk.Entry(form, textvariable=age_var).grid(row=0, column=3)
-
-tk.Label(form, text="City").grid(row=0, column=4)
-tk.Entry(form, textvariable=city_var).grid(row=0, column=5)
-
-def add_data():
-    if not name_var.get():
-        messagebox.showwarning("Input Error", "Name is required!")
-        return
-    elif not age_var.get():
-        messagebox.showwarning("Input Error", "Age is required!")
-        return
-    elif not city_var.get():
-        messagebox.showwarning("Input Error", "City is required!")
-        return
-
-    table.insert_dict({
-        "Name": name_var.get(),
-        "Age": age_var.get(),
-        "City": city_var.get()
-    })
-
-    name_var.set("")
-    age_var.set("")
-    city_var.set("")
-
-tk.Button(root, text="Add Data", command=add_data).pack(pady=5)
-
-table.load_data([
-    ["Person 1", 20, "City 1"],
-    ["Person 2", 22, "City 2"]
-])
-
-root.mainloop()
-```
-
----
-
-### 📸 Result
+### 📸 Screenshot
 
 ![Result Screenshot](Example%20Screenshot.jpg)
 
@@ -169,8 +113,8 @@ Load multiple rows.
 
 ```python
 table.load_data([
-    ["Person 1", 20],
-    ["Person 2", 22]
+    ["Person 1", 20, "City 1"],
+    ["Person 2", 22, "City 2"]
 ])
 ```
 
@@ -194,6 +138,29 @@ Return selected row as dictionary.
 selected = table.get_selected_row()
 ```
 
----
+<br>
+<br>
 
 > 💡 Tip: Use `insert_dict()` when working with forms for cleaner code.
+
+<br>
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome!
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a star ⭐
+
+It helps a lot!
+
+---
+
+## 📄 License
+
+MIT License © Abdullah Sameh
